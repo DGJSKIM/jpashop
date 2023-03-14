@@ -1,10 +1,14 @@
 package jpabook.jpashop.domain.item;
 
 import jakarta.persistence.*;
+import jpabook.jpashop.controller.BookForm;
 import jpabook.jpashop.domain.Category;
 import jpabook.jpashop.domain.exception.NotEnoughStockException;
+import jpabook.jpashop.repository.ItemRepository;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +42,15 @@ public abstract class Item {
         }
         this.stockQuantity = restStock;
     }
+
+    public Item updateItem(String name, int price, int stockQuantity) {
+        this.setPrice(price);
+        this.setName(name);
+        this.setStockQuantity(stockQuantity);
+
+        return this;
+    }
+
 
 
 

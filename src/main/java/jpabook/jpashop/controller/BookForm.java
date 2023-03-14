@@ -1,11 +1,17 @@
 package jpabook.jpashop.controller;
 
-import lombok.Getter;
-import lombok.Setter;
+import jpabook.jpashop.domain.item.Item;
+import jpabook.jpashop.repository.ItemRepository;
+import lombok.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
+@RequiredArgsConstructor
+
 public class BookForm {
+
 
     private Long id;
 
@@ -15,5 +21,7 @@ public class BookForm {
 
     private String author;
     private String isbn;
+
+
 
 }
